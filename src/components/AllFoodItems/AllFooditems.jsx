@@ -1,5 +1,5 @@
 import { Component } from "react";
-import "../FoodItem/FoodItem.css";
+import "../AllFoodItems/AllFoodItems.css";
 // 1. Define props type
 // interface AllFoodItemsProps {
 //   img: string;
