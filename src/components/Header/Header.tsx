@@ -8,6 +8,7 @@ export default class Header extends Component {
         {/* header start */}
         <header className={styles["title"]}>
           <h1>Evangadi Menu</h1>
+          <div></div>
         </header>
       </div>
     );
