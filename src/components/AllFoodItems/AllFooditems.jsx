@@ -1,5 +1,5 @@
 import { Component } from "react";
-import "../AllFoodItems/AllFoodItems.css";
+import styles from"../AllFoodItems/AllFoodItems.module.css";
 // 1. Define props type
 // interface AllFoodItemsProps {
 //   img: string;
@@ -15,16 +15,16 @@ export default class AllFooditems extends Component {
     const { img, price, title, desc, category } = this.props;
     return (
       <>
-        <div className="single-food">
-          <div className="img">
+        <div className={styles["single-food"]}>
+          <div className={styles["img"]}>
             <img src={img} alt={title} />
           </div>
-          <div className="title-price">
+          <div className={styles["title-price"]}>
             <h3>{title}</h3>
             <h3>{category}</h3>
             <p>{price}</p>
           </div>
-          <div className="food-desc">{desc}</div>
+          <div className={styles["food-desc"]}>{desc}</div>
         </div>
       </>
     );
