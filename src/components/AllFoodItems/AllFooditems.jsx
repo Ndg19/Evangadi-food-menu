@@ -1,18 +1,13 @@
 import { Component } from "react";
-import styles from"../AllFoodItems/AllFoodItems.module.css";
-// 1. Define props type
-// interface AllFoodItemsProps {
-//   img: string;
-//   price: string | number;
-//   title: string;
-//   desc: string;
-//   category:string
-// }
+import styles from "../AllFoodItems/AllFoodItems.module.css";
 
-// 2. Add props type to Component
 export default class AllFooditems extends Component {
   render() {
-    const { img, price, title, desc, category } = this.props;
+    const { title, category, price, img, desc, maxLength = 250 } = this.props;
+    // console.log(this.props);
+    // Shorten description if longer than maxLength using ternary oprator
+    const shortDesc =
+      desc.length > maxLength ? desc.slice(0, maxLength) + "..." : desc;
     return (
       <>
         <div className={styles["single-food"]}>
@@ -24,7 +19,7 @@ export default class AllFooditems extends Component {
             <h3>{category}</h3>
             <p>{price}</p>
           </div>
-          <div className={styles["food-desc"]}>{desc}</div>
+          <div className={styles["food-desc"]}>{shortDesc}</div>
         </div>
       </>
     );
